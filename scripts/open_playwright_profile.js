@@ -17,6 +17,8 @@ async function main() {
   const context = await chromium.launchPersistentContext(userDataDir, { 
     headless: false,
     viewport: null, // デフォルトサイズを無効化し、手動でリサイズしやすくする
+    channel: 'chrome', // システムにインストールされている本物のChromeを使用する（Googleログイン弾き対策）
+    ignoreDefaultArgs: ['--enable-automation', '--no-sandbox'], // 警告バーを非表示にする
   });
 
   // 最初のページはなろうのダッシュボードへ

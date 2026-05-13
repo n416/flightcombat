@@ -7,15 +7,15 @@ export const SidebarNavItems = [
   },
   {
     "target": "ep0010",
-    "title": "ep0010"
+    "title": "第1話：仮想の重さ、現実の痛み"
   },
   {
     "target": "ep0020",
-    "title": "ep0020"
+    "title": "第2話：鉄の棺桶と亡霊"
   },
   {
     "target": "ep0030",
-    "title": "ep0030"
+    "title": "第3話：ニューラル・ボーダー"
   },
   {
     "target": "ep0040",

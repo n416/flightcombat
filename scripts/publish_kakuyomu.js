@@ -18,7 +18,9 @@ export default async function publishKakuyomu(title, body, existingEpisodeId = n
 
   // persistent contextで起動することで、一度ログインすればクッキー等が次回以降も維持されます
   const context = await chromium.launchPersistentContext(userDataDir, { 
-    headless: false // 手動ログイン操作が必要な場合があるため、常に画面を表示
+    headless: false,
+    channel: 'chrome',
+    ignoreDefaultArgs: ['--enable-automation', '--no-sandbox'],
   });
   
   // persistent context の場合、デフォルトで1つのページ(tabs)が開かれています

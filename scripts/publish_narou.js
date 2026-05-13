@@ -16,7 +16,9 @@ export default async function publishNarou(title, body, existingEpisodeId = null
   // Persistent contextの設定
   const userDataDir = path.resolve(__dirname, '../.playwright_profile');
   const context = await chromium.launchPersistentContext(userDataDir, { 
-    headless: false 
+    headless: false,
+    channel: 'chrome',
+    ignoreDefaultArgs: ['--enable-automation', '--no-sandbox'],
   });
   const page = context.pages().length > 0 ? context.pages()[0] : await context.newPage();
 
